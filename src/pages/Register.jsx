@@ -14,6 +14,8 @@ export const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        
+
         try {
             await AuthenticateRegister(
                 email,
@@ -35,13 +37,13 @@ export const Register = () => {
             Register Page
             <form action="" onSubmit={handleSubmit}>
                 <label htmlFor="">nombre</label>
-                <input type="text" value={firtname} onChange={(e) => setFirstname(e.target.value)} />
+                <input type="text" value={firtname} onChange={(e) => setFirstname(e.target.value)} required />
                 <label htmlFor="">apellido</label>
-                <input type="text" value={lastname} onChange={(e) => setLastname(e.target.value)} />
+                <input type="text" value={lastname} onChange={(e) => setLastname(e.target.value)} required />
                 <label htmlFor="">nombre de usuario</label>
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
                 <label htmlFor="">telefono</label>
-                <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)}  required/>
                 <label htmlFor="">avatarUrl</label>
                 <input
                     type="file"
@@ -49,9 +51,9 @@ export const Register = () => {
                     onChange={(e) => setAvatarUrl(e.target.files[0])}
                 />
                 <label htmlFor="">email</label>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}  required/>
                 <label htmlFor="">contraseña</label>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                 <button type="submit">Registrarse</button>
             </form>
         </div>
